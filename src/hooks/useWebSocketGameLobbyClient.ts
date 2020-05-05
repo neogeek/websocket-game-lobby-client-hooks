@@ -56,5 +56,5 @@ export const useWebSocketGameLobbyClient = ({
             ...options,
         });
 
-    return { data, connected, send };
+    return { data, gameCode, playerId, connected, send };
 };
