@@ -42,7 +42,7 @@ export const useWebSocketGameLobbyClient = ({
 
     useEffect(() => {
         setGameCode(data.game?.gameCode);
-        setPlayerId(data.player?.playerId);
+        setPlayerId(data.player?.playerId || data.spectator?.spectatorId);
     }, [data]);
 
     const handleConnect = () => setConnected(true);
