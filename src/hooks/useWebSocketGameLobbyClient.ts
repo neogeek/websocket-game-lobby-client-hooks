@@ -21,30 +21,23 @@ export const useWebSocketGameLobbyClient = ({
 
     const [connected, setConnected] = useState(false);
 
-    const [keepAliveInterval, setKeepAliveInterval] = useState();
-
     useEffect(() => {
         setGameLobby(
             new WebSocketGameLobbyClient({
                 port,
                 gameId,
                 playerId,
+                keepAliveMilliseconds,
             })
         );
     }, []);
 
     useEffect(() => {
-        setKeepAliveInterval(
-            setInterval(() => gameLobby?.send('ping'), keepAliveMilliseconds)
-        );
-
         gameLobby?.addEventListener('open', handleConnect);
         gameLobby?.addEventListener('message', handleMessage);
         gameLobby?.addEventListener('close', handleDisconnect);
 
         return () => {
-            setKeepAliveInterval(clearInterval(keepAliveInterval));
-
             gameLobby?.removeEventListener('open', handleConnect);
             gameLobby?.removeEventListener('message', handleMessage);
             gameLobby?.removeEventListener('close', handleDisconnect);
