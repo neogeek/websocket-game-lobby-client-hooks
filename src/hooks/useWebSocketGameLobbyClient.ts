@@ -17,6 +17,7 @@ export const useWebSocketGameLobbyClient = ({
 
     const [playerId, setPlayerId] = useLocalStorage('playerId');
     const [gameCode, setGameCode] = useLocalStorage('gameCode');
+    const [gameId, setGameId] = useLocalStorage('gameId');
 
     const [connected, setConnected] = useState(false);
 
@@ -26,7 +27,7 @@ export const useWebSocketGameLobbyClient = ({
         setGameLobby(
             new WebSocketGameLobbyClient({
                 port,
-                gameCode,
+                gameId,
                 playerId,
             })
         );
@@ -51,6 +52,7 @@ export const useWebSocketGameLobbyClient = ({
     }, [gameLobby]);
 
     useEffect(() => {
+        setGameId(data.game?.gameId);
         setGameCode(data.game?.gameCode);
         setPlayerId(data.player?.playerId || data.spectator?.spectatorId);
     }, [data]);
@@ -61,10 +63,11 @@ export const useWebSocketGameLobbyClient = ({
 
     const send = (type: string, options = {}) =>
         gameLobby.send(type, {
+            gameId,
             gameCode,
             playerId,
             ...options,
         });
 
-    return { data, gameCode, playerId, connected, send };
+    return { data, gameId, gameCode, playerId, connected, send };
 };
