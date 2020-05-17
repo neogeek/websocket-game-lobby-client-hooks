@@ -15,9 +15,9 @@ export const useWebSocketGameLobbyClient = ({
 
     const [data, setData] = useState({});
 
-    const [playerId, setPlayerId] = useLocalStorage('playerId');
-    const [gameCode, setGameCode] = useLocalStorage('gameCode');
     const [gameId, setGameId] = useLocalStorage('gameId');
+    const [gameCode, setGameCode] = useLocalStorage('gameCode');
+    const [playerId, setPlayerId] = useLocalStorage('playerId');
 
     const [connected, setConnected] = useState(false);
 
