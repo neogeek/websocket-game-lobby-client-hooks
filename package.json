@@ -15,7 +15,7 @@
     "@typescript-eslint/parser": "2.33.0",
     "eslint": "7.0.0",
     "react": "16.13.1",
-    "websocket-game-lobby": "2.1.0"
+    "websocket-game-lobby": "2.2.0"
   },
   "scripts": {
     "build": "tsc",
