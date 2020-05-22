@@ -7,14 +7,30 @@
 ## Install
 
 ```bash
-$ npm install websocket-game-lobby websocket-game-lobby-client-hooks
+$ npm install websocket-game-lobby-client-hooks
 ```
 
-## Usage
+## API
+
+### useWebSocketGameLobbyClient
 
 ```javascript
 const { data, connected, send } = useWebSocketGameLobbyClient();
 ```
+
+#### send(type, data);
+
+##### Type
+
+| Name     | Description                        |
+| -------- | ---------------------------------- |
+| `create` | Create a new game.                 |
+| `join`   | Join existing game with game code. |
+| `leave`  | Leave current game.                |
+| `start`  | Start current game.                |
+| `end`    | End current game.                  |
+
+##### Examples
 
 ```javascript
 send('create'); // Create new game
