@@ -10,7 +10,14 @@ export const useWebSocketGameLobbyClient = ({
 }: {
     keepAliveMilliseconds?: number;
     port?: number | null;
-} = {}) => {
+} = {}): {
+    data: any;
+    gameId: string;
+    gameCode: string;
+    playerId: string;
+    connected: boolean;
+    send: (type: string, data: any) => void;
+} => {
     const [gameLobby, setGameLobby] = useState();
 
     const [data, setData] = useState({});
