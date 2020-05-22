@@ -6,10 +6,10 @@ import { WebSocketGameLobbyClient } from 'websocket-game-lobby';
 
 export const useWebSocketGameLobbyClient = ({
     keepAliveMilliseconds = 30000,
-    port = process.env.NODE_ENV === 'development' ? 5000 : null,
+    port = 80,
 }: {
     keepAliveMilliseconds?: number;
-    port?: number | null;
+    port?: number;
 } = {}): {
     data: any;
     gameId: string;
