@@ -1,1 +1,1 @@
-export { useWebSocketGameLobbyClient } from './hooks/useWebSocketGameLobbyClient';
+export { useWebSocketGameLobbyClient } from './useWebSocketGameLobbyClient';
