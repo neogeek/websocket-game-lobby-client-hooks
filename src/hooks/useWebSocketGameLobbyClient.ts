@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { useLocalStorage } from '@neogeek/common-react-hooks';
 
-import { WebSocketGameLobbyClient } from 'websocket-game-lobby';
+import { WebSocketGameLobbyClient } from 'websocket-game-lobby-client';
 
 export const useWebSocketGameLobbyClient = ({
     keepAliveMilliseconds = 30000,
