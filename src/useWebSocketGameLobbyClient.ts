@@ -5,11 +5,11 @@ import { useLocalStorage } from '@neogeek/common-react-hooks';
 import { WebSocketGameLobbyClient } from 'websocket-game-lobby-client';
 
 export const useWebSocketGameLobbyClient = ({
-    keepAliveMilliseconds = 30000,
     port = 80,
+    keepAliveMilliseconds = 30000,
 }: {
-    keepAliveMilliseconds?: number;
     port?: number;
+    keepAliveMilliseconds?: number;
 } = {}): {
     data: any;
     gameId: string;
