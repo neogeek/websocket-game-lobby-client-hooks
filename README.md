@@ -15,8 +15,18 @@ $ npm install websocket-game-lobby-client-hooks
 ### useWebSocketGameLobbyClient
 
 ```javascript
-const { data, connected, send } = useWebSocketGameLobbyClient();
+const { data, connected, send } = useWebSocketGameLobbyClient({
+    port = 80,
+    keepAliveMilliseconds = 30000
+});
 ```
+
+#### Options
+
+| Name                    | Description                                                                                                   | Default |
+| ----------------------- | ------------------------------------------------------------------------------------------------------------- | ------- |
+| `port`                  | Port to connect to WebSocket server.                                                                          | `80`    |
+| `keepAliveMilliseconds` | Interval at which to ping the [websocket-game-lobby](https://github.com/neogeek/websocket-game-lobby) server. | `30000` |
 
 #### send(type, data);
 
