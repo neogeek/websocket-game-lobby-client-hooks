@@ -23,7 +23,7 @@
   "scripts": {
     "build": "tsc",
     "build:watch": "tsc --watch",
-    "prepublish": "make clean && npm run build",
+    "prepare": "make clean && npm run build",
     "lint": "eslint 'src/**/*.ts'"
   },
   "keywords": [
