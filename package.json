@@ -9,16 +9,16 @@
   "types": "dist/index.d.ts",
   "license": "MIT",
   "dependencies": {
-    "@neogeek/common-react-hooks": "2.0.1",
+    "@neogeek/common-react-hooks": "2.0.2",
     "react": "16.13.1",
     "websocket-game-lobby-client": "1.0.1"
   },
   "devDependencies": {
-    "@types/node": "14.6.4",
-    "@typescript-eslint/eslint-plugin": "4.1.0",
-    "@typescript-eslint/parser": "4.1.0",
-    "eslint": "7.8.1",
-    "typescript": "4.0.2"
+    "@types/node": "14.11.4",
+    "@typescript-eslint/eslint-plugin": "4.4.0",
+    "@typescript-eslint/parser": "4.4.0",
+    "eslint": "7.10.0",
+    "typescript": "4.0.3"
   },
   "scripts": {
     "build": "tsc",
